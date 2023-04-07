@@ -1,14 +1,12 @@
 CC=gcc
-CFLAGS=-Wall -Wextra -g
+CFLAGS=-Wall -Wextra
+INC_PATH=./include
+LIB_PATH=./lib
 
-all: tetris
+all: core.o
 
-tetris: main.o
-	$(CC) $(CFLAGS) main.h include/main.o core.h -o bin/$@ -lncurses
-	@echo "Build process finished. Run with ./bin/tetris"
+core.o: core.c core.h
+	$(CC) -c -g $< -o $(INC_PATH)/core.o
 
-main.o: 
-	$(CC) $(CFLAGS) -c main.c -o include/$@ 
-
-clean: 
-	rm -rf ./*.o tetris ./bin/* ./include/*.o
+clean:
+	rm -rf ./*.o $(INC_PATH)/*.o
