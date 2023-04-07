@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 500 150" width="500" height="150">
+	<foreignObject width="100%" height="100%">
+		<div xmlns="http://www.w3.org/1999/xhtml">
+			<style>
+
+                .container{
+                    display: grid;
+                    grid-template-columns: repeat(8,30px);
+                    background: #F3F3F3;
+                    padding: 1em 0 1em 0;
+                    width: 500px;
+                    justify-content: center;
+                    gap: 20px;
+
+                    border-radius: 1em;
+                }
+                .block{
+                    display: flex;
+                    place-items: center;
+                    justify-content: center;
+
+                    width: 40px;
+                    height: 40px;
+                    background: #4A4A4A;
+                    border-radius: 0.3em;
+
+                    font-size: 1.2em;
+                    font-weight: 700;
+                    font-family: monospace;
+                    color: #D2D2D2;
+                }
+
+                .block[value="1"]{
+                    color: #3F7;
+                }
+
+                .move-down{
+                    animation-duration: 15s;
+                    animation-iteration-count: infinite;
+                    animation-name: move_down;
+                    animation-timing-function: ease-out;
+                }
+
+                .move-up{
+                    animation-duration: 15s;
+                    animation-iteration-count: infinite;
+                    animation-name: move_up;
+                    animation-timing-function: ease-out;
+                }
+
+
+                @keyframes move_up{
+                    20%{
+                        transform: translateY(0%);
+                    }
+                    30%{
+                        transform: translateY(calc(-50% - 10px));
+                    }
+                    90%{
+                        transform: translateY(calc(-50% - 10px));
+                    }
+                    100%{
+                        transform: translateY(0%);
+                    }
+                }
+                @keyframes move_down{
+                    20%{
+                        transform: translateY(0%);
+                    }
+                    30%{
+                        transform: translateY(calc(50% + 10px));
+                    }
+                    90%{
+                        transform: translateY(calc(50% + 10px));
+                    }
+                    100%{
+                        transform: translateY(0%);
+                    }
+                }
+
+                .front{
+                    z-index: 9;
+                }
+			</style>
+            <div class="container">
+
+                <div class="block move-down front">0</div>
+                <div class="block move-down front">0</div>
+                <div value="1" class="block move-down">1</div>
+                <div value="1" class="block move-down">1</div>
+                <div value="1" class="block move-down">1</div>
+                <div value="1" class="block move-down">1</div>
+                <div value="1" class="block move-down">1</div>
+                <div value="1" class="block move-down">1</div>
+
+                <div class="block move-up">0</div>
+                <div value="1" class="block move-up">1</div>
+                <div value="1" class="block move-up">1</div>
+                <div value="1" class="block move-up">1</div>
+                <div value="1" class="block move-up">1</div>
+                <div class="block move-up front">0</div>
+                <div value="1" class="block move-up">1</div>
+                <div class="block move-up front">0</div>
+
+		    </div>
+        </div>
+	</foreignObject>
+</svg>
